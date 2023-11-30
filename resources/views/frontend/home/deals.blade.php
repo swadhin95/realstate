@@ -13,7 +13,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image"><img
-                                    src="{{ asset('frontend/') }}assets/images/feature/feature-1.jpg"
+                                    src="{{ asset('frontend/assets/images/feature/feature-1.jpg') }}"
                                     alt=""></figure>
                             <div class="batch"><i class="icon-11"></i></div>
                             <span class="category">Featured</span>
