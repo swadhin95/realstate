@@ -6,6 +6,9 @@
         @include('frontend.home.banner')
         <!-- banner-section end -->
 
+        <!-- banner-section -->
+        @include('frontend.home.category')
+        <!-- banner-section end -->             
 
         <!-- feature-section -->
         @include('frontend.home.feature')

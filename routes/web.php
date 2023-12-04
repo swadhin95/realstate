@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\PropertyTypesController;
 
 
 Route::get('/', [UserController::class, 'Index']);
@@ -33,6 +34,26 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
 });//End of Admin Middleware
+
+
+
+
+
+//Admin All Category Types
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(PropertyTypesController::class)->group(function(){
+        Route::get('/all/types', 'AllTypes')->name('all.types');
+        Route::get('/add/types', 'AddTypes')->name('add.types');
+        Route::post('/store/types', 'StoreTypes')->name('store.types');
+        Route::get('/edit/types/{id}', 'EditTypes')->name('edit.types');
+        Route::post('/update/types/{id}', 'UpdateTypes')->name('update.types');
+        Route::get('/delete/types/{id}', 'DeleteTypes')->name('delete.types');
+    });
+});//End of Admin All Category Types Middleware
+
+
+
+
 
 
 Route::middleware(['auth','role:agent'])->group(function(){
