@@ -52,6 +52,17 @@ Route::middleware(['auth','role:admin'])->group(function(){
 });//End of Admin All Category Types Middleware
 
 
+//Admin All Amenities
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(PropertyTypesController::class)->group(function(){
+        Route::get('/all/amenities', 'AllAmenities')->name('all.amenities');
+        Route::get('/add/amenities', 'AddAmenity')->name('add.amenities');
+        Route::post('/store/amenity', 'StoreAmenity')->name('store.amenity');
+        Route::get('/edit/amenity/{id}', 'EditAmenity')->name('edit.amenity');
+        Route::post('/update/amenity', 'UpdateAmenity')->name('update.amenity');
+        Route::get('/delete/amenity/{id}', 'DeleteAmenity')->name('delete.amenity');
+    });
+});//End of Admin All Amenities Middleware
 
 
 

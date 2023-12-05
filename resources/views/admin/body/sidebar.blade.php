@@ -20,18 +20,36 @@
         </li>
         <li class="nav-item nav-category">web apps</li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <a class="nav-link" data-bs-toggle="collapse" href="#types" role="button" aria-expanded="false" aria-controls="types">
             <i class="link-icon" data-feather="mail"></i>
             <span class="link-title">Category Types</span>
             <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
-            <div class="collapse" id="emails">
+            <div class="collapse" id="types">
             <ul class="nav sub-menu">
                 <li class="nav-item">
                 <a href="{{route('all.types')}}" class="nav-link">All Types</a>
                 </li>
                 <li class="nav-item">
-                <a href="pages/email/read.html" class="nav-link">Add Types</a>
+                <a href="{{route('add.types') }}" class="nav-link">Add Types</a>
+                </li>
+            </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#amenities" role="button" aria-expanded="false" aria-controls="amenities">
+            <i class="link-icon" data-feather="mail"></i>
+            <span class="link-title">Amenities</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="amenities">
+            <ul class="nav sub-menu">
+                <li class="nav-item">
+                <a href="{{route('all.amenities')}}" class="nav-link">All Amenities</a>
+                </li>
+                <li class="nav-item">
+                <a href="{{route('add.amenities')}}" class="nav-link">Add Amenity</a>
                 </li>
             </ul>
             </div>
