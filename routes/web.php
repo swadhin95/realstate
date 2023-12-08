@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\PropertyTypesController;
+use App\Http\Controllers\Backend\PropertyController;
 
 
 Route::get('/', [UserController::class, 'Index']);
@@ -63,6 +64,16 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/delete/amenity/{id}', 'DeleteAmenity')->name('delete.amenity');
     });
 });//End of Admin All Amenities Middleware
+
+
+//Admin All Properties
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::controller(PropertyController::class)->group(function(){
+        Route::get('/all/properties', 'AllProperties')->name('all.properties');
+        Route::get('/add/property', 'AddProperty')->name('add.property');
+       
+    });
+});//End of Admin All Properties Middleware
 
 
 
